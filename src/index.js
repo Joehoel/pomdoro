@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
 
 	:root {
 		--primary-color: #FF8900;
+		--width: 80%;
 	}
 
 	*,

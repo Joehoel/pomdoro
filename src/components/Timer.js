@@ -7,6 +7,8 @@ const TimerStyles = styled(Box)`
 	position: absolute;
 	top: 75%;
 	color: #000;
+	width: var(--width);
+	text-align: center;
 `;
 
 const Timer = () => {
