@@ -1,34 +1,24 @@
 import styled from "styled-components";
 import Header from "./components/Header";
-import { Box, Button } from "./components/ui";
+import { Box } from "./components/ui";
 import { FiPlay } from "react-icons/fi";
+import Controls from "./components/Controls";
 
 const Wrapper = styled.div`
 	height: 100vh;
 	width: 100%;
 	background: #ededed;
-
-	.controls {
-		width: 100%;
-		height: auto;
-		position: fixed;
-		bottom: 2rem;
-
-		display: flex;
-		justify-content: space-around;
-	}
 `;
 
 const TimerList = styled.div`
 	color: #fff;
-	width: 100%;
 	position: relative;
 	margin: 30% auto 0 auto;
 	width: var(--width);
 
 	& > * {
 		display: flex;
-		padding: 0.75rem;
+		padding: 0.5rem;
 		align-items: center;
 		margin-bottom: 2rem;
 
@@ -50,6 +40,9 @@ const TimerList = styled.div`
 const StartIcon = styled(FiPlay)`
 	height: 2rem;
 	width: 2rem;
+
+	/* TODO: Improve */
+	box-shadow: 0px -5px 0px 0px var(--primary-color) inset;
 `;
 
 function App() {
@@ -79,10 +72,7 @@ function App() {
 					</div>
 				</Box>
 			</TimerList>
-			<div className="controls">
-				<Button>Stop</Button>
-				<Button primary>Pause</Button>
-			</div>
+			<Controls />
 		</Wrapper>
 	);
 }
