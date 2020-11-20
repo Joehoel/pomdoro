@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import Header from "./components/Header";
+import { Box, Button } from "./components/ui";
+
+const Wrapper = styled.div`
+	height: 100vh;
+	width: 100%;
+	background: #ededed;
+
+	.controls {
+		width: 100%;
+		height: auto;
+		position: fixed;
+		bottom: 2rem;
+
+		display: flex;
+		justify-content: space-around;
+	}
+`;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Wrapper>
+			<Header />
+			<div className="timer-list"></div>
+			<div className="controls">
+				<Button>Stop</Button>
+				<Button primary>Pause</Button>
+			</div>
+		</Wrapper>
+	);
 }
 
 export default App;

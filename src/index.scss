@@ -1,0 +1,17 @@
+:root {
+	--background: #ededed;
+	--black: #000;
+	--white: #fff;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Roboto Mono", sans-serif;
+}
