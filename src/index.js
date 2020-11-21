@@ -23,6 +23,21 @@ const GlobalStyle = createGlobalStyle`
 		box-sizing: border-box;
 		font-family: "Roboto Mono", sans-serif;
 	}
+
+	html,
+	body {
+		position: fixed;
+		overflow: hidden;
+		width: 100vw;
+	}
+
+	#root {
+		height: 100vh;11
+		width: 100%;
+		background: #ededed;
+    overflow-y: hidden;
+		user-select: none;
+	}
 `;
 
 ReactDOM.render(

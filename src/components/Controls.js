@@ -3,11 +3,11 @@ import styled from "styled-components";
 import { Button } from "./ui";
 
 const ControlsStyles = styled.div`
-	margin: 0 auto;
-	width: var(--width);
-
 	display: flex;
 	justify-content: space-between;
+	width: var(--width);
+	position: fixed;
+	bottom: 2rem;
 `;
 
 const Controls = () => {

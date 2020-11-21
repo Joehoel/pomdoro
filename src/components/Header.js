@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Timer from "./Timer";
 
 const HeaderStyles = styled.div`
 	min-height: 40%;
@@ -25,7 +24,6 @@ const Header = () => {
 	return (
 		<HeaderStyles>
 			<h1 className="title">Timer</h1>
-			<Timer />
 		</HeaderStyles>
 	);
 };
