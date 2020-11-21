@@ -37,6 +37,7 @@ const GlobalStyle = createGlobalStyle`
 		background: #ededed;
     overflow-y: hidden;
 		user-select: none;
+		-webkit-tap-highlight-color: transparent;
 	}
 `;
 

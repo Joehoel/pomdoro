@@ -13,10 +13,17 @@ const CountdownStyles = styled(Box)`
 	font-size: 2rem;
 `;
 
-const Countdown = () => {
+const Countdown = ({ time }) => {
+	const minutes = Math.floor(time / 60);
+	const remainderSeconds = time % 60;
+
+	const timeLeft = `${minutes}:${
+		remainderSeconds > 9 ? remainderSeconds : `0${remainderSeconds}`
+	}`;
+
 	return (
 		<CountdownStyles secondary>
-			<h1>25:00</h1>
+			<h1>{timeLeft}</h1>
 		</CountdownStyles>
 	);
 };

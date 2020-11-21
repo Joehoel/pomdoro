@@ -1,6 +1,8 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const Box = styled.div`
+	overflow: visible;
 	background-color: ${props =>
 		props.primary
 			? "var(--primary-color)"
@@ -10,7 +12,7 @@ export const Box = styled.div`
 	box-shadow: 8px 8px 0px -2px var(--primary-color);
 `;
 
-export const Button = styled.button`
+export const Button = styled(motion.button)`
 	background-color: ${props =>
 		props.primary ? "var(--primary-color)" : "#fff"};
 	outline: none;
@@ -22,8 +24,12 @@ export const Button = styled.button`
 	font-weight: bold;
 	box-shadow: 8px 8px 0px -2px #000;
 
-	&:active {
+	&:disabled {
+		background-color: #c9c9c9;
+		color: #9f9f9f;
+	}
+	/* &:active {
 		transform: scale(0.9);
 		transition: transform 0.2s ease;
-	}
+	} */
 `;
