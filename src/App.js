@@ -2,10 +2,13 @@ import styled from "styled-components";
 import Header from "./components/Header";
 import Controls from "./components/Controls";
 import Countdown from "./components/Countdown";
-import TimerList from "./components/TimerList";
-import { useTimer } from "use-timer";
+import OptionsList from "./components/OptionsList";
+import { useState } from "react";
+import { useCountdown } from "./lib/contexts/CountdownContext";
+import FullscreenCountdown from "./components/FullscreenCountdown";
+import { motion } from "framer-motion";
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
 	margin: 0 auto;
 	width: var(--width);
 	overflow: visible;
@@ -13,17 +16,23 @@ const Wrapper = styled.div`
 `;
 
 function App() {
-	const { time, start, pause, reset, status } = useTimer({
-		initialTime: 300,
-		timerType: "DECREMENTAL",
-	});
+	const { time, start, pause, reset, status } = useCountdown();
+	const [fullscreen, setFullscreen] = useState(false);
+
+	const toggleFullscreen = () => {
+		setFullscreen(!fullscreen);
+	};
 
 	return (
 		<>
 			<Header />
 			<Wrapper>
-				<Countdown time={time} />
-				<TimerList />
+				{fullscreen ? (
+					<FullscreenCountdown onClick={() => toggleFullscreen()} />
+				) : (
+					<Countdown time={time} onClick={() => toggleFullscreen()} />
+				)}
+				<OptionsList />
 				<Controls
 					start={start}
 					pause={pause}

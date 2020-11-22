@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useCountdown } from "../lib/contexts/CountdownContext";
 import { Box } from "./ui";
 
 const CountdownStyles = styled(Box)`
@@ -13,17 +14,12 @@ const CountdownStyles = styled(Box)`
 	font-size: 2rem;
 `;
 
-const Countdown = ({ time }) => {
-	const minutes = Math.floor(time / 60);
-	const remainderSeconds = time % 60;
-
-	const timeLeft = `${minutes}:${
-		remainderSeconds > 9 ? remainderSeconds : `0${remainderSeconds}`
-	}`;
+const Countdown = props => {
+	const { time } = useCountdown();
 
 	return (
-		<CountdownStyles secondary>
-			<h1>{timeLeft}</h1>
+		<CountdownStyles secondary whileTap={{ scale: 0.8 }} {...props}>
+			<h1>{time}</h1>
 		</CountdownStyles>
 	);
 };

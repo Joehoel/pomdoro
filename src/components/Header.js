@@ -23,7 +23,7 @@ const HeaderStyles = styled.div`
 const Header = () => {
 	return (
 		<HeaderStyles>
-			<h1 className="title">Timer</h1>
+			<h1 className="title">Pomodoro</h1>
 		</HeaderStyles>
 	);
 };

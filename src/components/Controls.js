@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useCountdown } from "../lib/contexts/CountdownContext";
 import { Button } from "./ui";
 
 const ControlsStyles = styled.div`
@@ -10,7 +11,9 @@ const ControlsStyles = styled.div`
 	bottom: 2rem;
 `;
 
-const Controls = ({ start, reset, pause, status }) => {
+const Controls = () => {
+	const { start, reset, pause, status } = useCountdown();
+
 	const running = status === "RUNNING";
 	const stopped = status === "STOPPED";
 

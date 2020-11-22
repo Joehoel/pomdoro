@@ -1,11 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import "./index.scss";
-// import "normalize.css";
 import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import { createGlobalStyle } from "styled-components";
+import { CountdownProvider } from "./lib/contexts/CountdownContext";
 
 const GlobalStyle = createGlobalStyle`
 	@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:100,200,300,regular,500,600,700,100italic,200italic,300italic,italic,500italic,600italic,700italic);
@@ -43,8 +42,10 @@ const GlobalStyle = createGlobalStyle`
 
 ReactDOM.render(
 	<React.StrictMode>
-		<GlobalStyle />
-		<App />
+		<CountdownProvider>
+			<GlobalStyle />
+			<App />
+		</CountdownProvider>
 	</React.StrictMode>,
 	document.getElementById("root")
 );

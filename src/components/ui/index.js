@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const Box = styled.div`
+export const Box = styled(motion.div)`
 	overflow: visible;
 	background-color: ${props =>
 		props.primary
@@ -9,7 +9,12 @@ export const Box = styled.div`
 			: props.secondary
 			? "#fff"
 			: "#000"};
+	color: ${props =>
+		props.primary ? `#000` : props.secondary ? "#000" : "#fff"};
 	box-shadow: 8px 8px 0px -2px var(--primary-color);
+	padding: 0.5rem 1rem;
+	/* filter: ${props =>
+		props.grayscale ? `grayscale(100%)` : `grayscale(0)`}; */
 `;
 
 export const Button = styled(motion.button)`
@@ -32,4 +37,19 @@ export const Button = styled(motion.button)`
 		transform: scale(0.9);
 		transition: transform 0.2s ease;
 	} */
+`;
+
+export const Fullscreen = styled(motion.div)`
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	background-color: #000;
+	color: #fff;
+
+	display: grid;
+	place-items: center;
+	font-size: 6.5rem;
 `;
